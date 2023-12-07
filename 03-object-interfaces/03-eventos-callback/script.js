@@ -7,7 +7,7 @@ const button = document.querySelector("button");
 function handleClick(event) {
     console.log(event.pageX);
 }
-button === null || button === void 0 ? void 0 : button.addEventListener("click", handleClick);
+button?.addEventListener("click", handleClick);
 function handleScroll(event) {
     console.log(event);
 }
@@ -39,7 +39,7 @@ function handleClick2(event) {
         console.log(elemento.innerText);
     }
 }
-button === null || button === void 0 ? void 0 : button.addEventListener("click", handleClick2);
+button?.addEventListener("click", handleClick2);
 //Exercício
 //Utilizando a estrutura HTML/CSS abaixo, crie o script que irá fazer o botão mobile funcionar (ativar/desativar a navegação).
 // Estado dos elementos
@@ -69,4 +69,4 @@ function toggleMenu(event) {
         }
     }
 }
-btnMobile === null || btnMobile === void 0 ? void 0 : btnMobile.addEventListener("pointerdown", toggleMenu);
+btnMobile?.addEventListener("pointerdown", toggleMenu);
