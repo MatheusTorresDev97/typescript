@@ -1,9 +1,4 @@
 "use strict";
-let saldo = 3000;
-const elementoSaldo = document.querySelector(".saldo-valor .valor");
-if (elementoSaldo) {
-    elementoSaldo.textContent = saldo.toString();
-}
 const elementoFormulario = document.querySelector(".block-nova-transacao form");
 elementoFormulario.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -18,18 +13,18 @@ elementoFormulario.addEventListener("submit", (e) => {
     let tipoTransacao = inputTipoTransacao.value;
     let valor = inputValor.valueAsNumber;
     let data = new Date(inputData.value);
-    if (tipoTransacao == "Depósito") {
+    if (tipoTransacao == TipoTransacao.DEPOSITO) {
         saldo += valor;
     }
-    else if (tipoTransacao == "Transferência" ||
-        tipoTransacao == "Pagamento de Boleto") {
+    else if (tipoTransacao == TipoTransacao.TRANSFERENCIA ||
+        tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
         saldo -= valor;
     }
     else {
         alert("Tipo de Transação é inválido!");
         return;
     }
-    elementoSaldo.textContent = saldo.toString();
+    elementoSaldo.textContent = saldo.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
     const novaTransacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
@@ -38,4 +33,4 @@ elementoFormulario.addEventListener("submit", (e) => {
     console.log(novaTransacao);
     elementoFormulario.reset();
 });
-//# sourceMappingURL=bytebank.js.map
+//# sourceMappingURL=nova-transacao-component.js.map

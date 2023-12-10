@@ -6,14 +6,14 @@ let qualquer = "";
 qualquer = 25;
 const lista = [];
 lista.push(13, 22.5, 22, 89, 1.58);
-var TipoTransacao;
-(function (TipoTransacao) {
-    TipoTransacao["DEPOSITO"] = "Dep\u00F3sito";
-    TipoTransacao["TRANSFERENCIA"] = "Transfer\u00EAncia";
-    TipoTransacao["PAGAMENTO_BOLETO"] = "Pagamento de Boleto";
-})(TipoTransacao || (TipoTransacao = {}));
+var NovaTipoTransacao;
+(function (NovaTipoTransacao) {
+    NovaTipoTransacao["DEPOSITO"] = "Dep\u00F3sito";
+    NovaTipoTransacao["TRANSFERENCIA"] = "Transfer\u00EAncia";
+    NovaTipoTransacao["PAGAMENTO_BOLETO"] = "Pagamento de Boleto";
+})(NovaTipoTransacao || (NovaTipoTransacao = {}));
 const novaTransacao = {
-    tipoTransacao: TipoTransacao.DEPOSITO,
+    tipoTransacao: NovaTipoTransacao.DEPOSITO,
     data: new Date(),
     valor: 0,
 };
