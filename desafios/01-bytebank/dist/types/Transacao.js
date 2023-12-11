@@ -1,2 +1,2 @@
-"use strict";
+export {};
 //# sourceMappingURL=Transacao.js.map
