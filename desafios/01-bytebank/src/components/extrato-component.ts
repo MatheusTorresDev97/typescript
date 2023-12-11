@@ -1,12 +1,14 @@
 import Conta from "../types/Conta.js";
 import { FormatoData } from "../types/FormatoData.js";
+import { GrupoTransacao } from "../types/GrupoTransacao.js";
 import { formatarMoeda, formatarData } from "../utils/formatters.js";
+
 const elementoRegistroTransacoesExtrato = document.querySelector(".extrato .registro-transacoes") as HTMLElement;
 
 renderizarExtrato();
 
 function renderizarExtrato() {
-    const gruposTransacoes = Conta.getGruposTransacoes();
+    const gruposTransacoes : GrupoTransacao[] = Conta.getGruposTransacoes();
     elementoRegistroTransacoesExtrato!.innerHTML = "";
     let htmlRegistroTransacoes = "";
     for (let grupoTransacao of gruposTransacoes) {
