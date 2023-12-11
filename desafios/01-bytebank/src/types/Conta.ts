@@ -84,6 +84,16 @@ export class Conta {
     }
 }
 
+export class ContaPremium extends Conta {
+    registrarTransacao(transacao: Transacao): void {
+        if(transacao.tipoTransacao === TipoTransacao.DEPOSITO) {
+            transacao.valor += 0.5
+        }
+        super.registrarTransacao(transacao)
+    }
+}
+
 const conta = new Conta("Matheus Torres");
+const contaPremium = new ContaPremium("Roberto Matheus Lima Torres")
 
 export default conta
